@@ -6,7 +6,7 @@ body {
 h2{
 	font-size: 40px;
 	font-family: monospace;
-	margin-top: 50%;
+	margin-top: 140%;
 	margin-left: 50%;
 	color: #70AAD5;
 }
@@ -15,17 +15,42 @@ p{
 	font-family: "Roboto Black";
 	font-size: 14px;
 	color: #70AAD5;
-	font-weight: bold;
 }
 
+table{
+	font-size: 13px;
+	width: 90%;
+	margin: auto;
+	padding: 10px;
+	padding-left: 30px;
+	padding-right: 30px;
+	font-family: "Trebuchet MS";
+	font-size: 15px;
+	color: #FFFFFF;
+	border-collapse: collapse;
+	border-color: #70AAD5;
+	border-width: 1px;
+	background-color: #70AAD5;
+}
+
+td{
+	padding-left: 5px;
+	padding-right: 5px;
+	font-size: 12px;
+	color: #222222;
+	background-color: #FFFFFF;
+}
+
+/*Input-classien muotoilut*/
 .hopo{
 	border-radius: 5px;
 	font-family: "Roboto Space";
 	max-width: 200px;
-	max-height: 150px;
-	width:200px;
+	max-height: 50px;
+	width: 200px;
 }
 
+/* Varsinainen "sivu" */
 .nootti{
 	border-radius: 5px;
 	margin:auto;
@@ -35,8 +60,10 @@ p{
 	min-height: 600px;
 	margin-top: 100px;
 	box-shadow: 3px 3px 6px #888888;
+	padding-bottom: 25px;
 }
 
+/* Ylä-vasen -DIVin muotoilu */
 .left{
 	width: 20%;
 	max-width: 20%;
@@ -44,21 +71,19 @@ p{
 	float: left;
 }
 
-
+/* Ylä-oikea -DIVin muotoilu */
 .input{
 	width:50%;
 	height:200px;
 	padding-top: 50px;
-	margin-left: auto;
+	margin-left: 485px;
 }
 
-.info{
-	margin:auto;
-	width: 70%;
-	max-width: 70%;
-	height: 50px;
-}
-
-.data{
-
+.nappi{
+	style=border-radius: 5px;
+	background-color: #44AA44;
+	color: #000000;
+	width: 260px;
+	border: 0px;
+	margin-top: -15px;
 }

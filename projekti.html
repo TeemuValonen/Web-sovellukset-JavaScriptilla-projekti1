@@ -2,9 +2,62 @@
 <html>
 
 <script>
+var riviLKM = 0;
+
 function merkinta() {
+	riviLKM++;
+
+	var lista = document.getElementById("tasks");
+
+	var rivi =  lista.insertRow();
+
+	var solu1 = rivi.insertCell(0);
+	var solu2 = rivi.insertCell(1);
+	var solu3 = rivi.insertCell(2);
+	var solu4 = rivi.insertCell(3);
+
+	var tekija = document.getElementById('tekija').value;
+	var otsikko  = document.getElementById('otsikko').value;
+	var tehtava = document.getElementById('task').value;
+	var pvm = document.getElementById('pvm').value;
+
+	var lisatty = new Date();
+	var aika = pvmNYT(lisatty);
+
+	solu1.innerHTML = tekija;
+	solu2.innerHTML = otsikko;
+	solu3.innerHTML = tehtava + "<br><br>" + "--  " + aika;
+	solu4.innerHTML = pvm;
+
+	if (riviLKM == 5) {
+			riviLKM = 0;
+
+		rivi = lista.insertRow();
+
+		solu1 = rivi.insertCell(0);
+		solu2 = rivi.insertCell(1);
+		solu3 = rivi.insertCell(2);
+		solu4 = rivi.insertCell(3);
+
+		solu1.innerHTML = "<br>";
+		solu2.innerHTML = " ";
+		solu3.innerHTML = " ";
+		solu4.innerHTML = " ";
+
+	}
 
 }
+
+function pvmNYT(pvm) {
+
+	var pv = pvm.getDate();
+	var kk = pvm.getMonth()+1;
+	var vuosi = pvm.getFullYear();
+
+	return pv + "." + kk + "." + vuosi;
+
+}
+
 </script>
 
 <head>
@@ -19,28 +72,40 @@ function merkinta() {
 	</div>
 		<div class="input", id="syote">
 
-		<form onsubmit="merkinta()">
-			<p>tekijä:
+			<p>tekijä
 			<input type="text" id="tekija" class="hopo" style="margin-left: 12px;">
 					<br>
-			<p>otsikko:
-			<input type="text" id="task" class="hopo">
-					<br><br>
-			<p>tehtävä:
-			<textarea class="hopo" name="tehtävä"></textarea>
-			<input type="submit" value=">>"
-					style="border-radius: 5px; background-color: #FFFFFF; color: #000000; margin-top:-7px;">
-		</form>
-		</div>
+			<p>otsikko
+			<input type="text" id="otsikko" class="hopo" style="margin-left:1px;">
+					<br>
+			<p>dödis
+			<input type="text" id="pvm" class="hopo" style="margin-left: 12px;">
+					<br>
+			<p>tehtävä
+			<textarea class="hopo" name="tehtava" id="task"></textarea>
+		</p>
 
-
-	<div class="info">
-		<p> Muistiinpanosi</p>
+			<input class="nappi" type="button" onclick="merkinta()" value=">>">
 	</div>
 
-		<hr style="height:2px; background-color: #AAD570; width:90%;">
+		<hr style="height:3px; background-color: #70AAD5; width:90%; border: 0px; margin-top: 20px;">
 
-	<div class="data", id="tasks">
+	<div class="data">
+
+		<table id="tasks" border="1">
+
+			<thead>
+	      <tr>
+	        <th>tekijä</th>
+	        <th>otsikko</th>
+	        <th>tehtävä</th>
+					<th>deadline</th>
+	      </tr>
+	    </thead>
+			<tbody>
+			</tbody>
+
+		</table>
 
 	</div>
 

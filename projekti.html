@@ -1,5 +1,10 @@
 <!doctype html>
 <html>
+
+<script>
+<!-- here we javascript -->
+</script>
+
 <head>
 <meta charset="utf-8">
 <title>Projekti 1</title>
@@ -10,10 +15,23 @@
 		<div class="jumbo">
 		<h1 class="PALIKKA"> PALIKKA </h1>
 		</div>
-	<div class="a4">
-	<p> palikka </p>
+	<div class="a4", id="syote">
+
+	<p>
+				<form onsubmit="return getData()">
+
+				Tekijä:<br>
+			  <input type="text" name="email">
+			  <br>
+				Tehtävä:<br>
+			  <textarea name="comment"></textarea>
+				<br>
+			<input type="submit" value="Send">
+			</form>
+	</p>
+
 	</div>
-	<div class="a4">
+	<div class="a4", id="lista">
 	<p> palikka 2 </p>
 	</div>
 	</div>

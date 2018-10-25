@@ -41,12 +41,32 @@ muotoon. */
 	var lisatty = new Date();
 	var aika = pvmNYT(lisatty);
 
-/* tässä kohtaa sijoitetaan tekstikenttien syötteet taulukkoon oikeisiin
-kohtiin innerHTML -komennoilla */
+/* Tässä kohtaa sijoitetaan tekstikenttien syötteet taulukkoon oikeisiin
+kohtiin innerHTML -komennoilla. If-lauseet tarkastavat tyhjien syötteiden
+varalta.*/
+if (tekija != "") {
 	solu1.innerHTML = tekija;
+} else {
+	solu1.innerHTML = "Et syöttänyt tekijää";
+}
+
+if (otsikko != "") {
 	solu2.innerHTML = otsikko;
+} else {
+	solu2.innerHTML = "Ei otsikkoa";
+}
+
+if (tehtava !="") {
 	solu3.innerHTML = tehtava + "<br><br>" + "--  " + aika;
+} else {
+	solu3.innerHTML = "Et syöttänyt mitään" + "<br><br>" + "--  " + aika;
+}
+
+if (pvm != "") {
 	solu4.innerHTML = pvm;
+} else {
+	solu4.innerHTML = "Et syöttänyt päivämäärää";
+}
 
 /* funktion lopussa if -lause tarkastaa, kuinka mones rivi on edellisestä
 tarkastuksesta. Näin joka viidennen rivin jälkeen tulostetaan tyhjä rivi
@@ -97,12 +117,16 @@ function pvmNYT(pvm) {
 			<p>tekijä
 			<input type="text" id="tekija" class="hopo" style="margin-left: 12px;">
 					<br>
+
 			<p>otsikko
 			<input type="text" id="otsikko" class="hopo" style="margin-left:1px;">
 					<br>
-			<p>deadline
-			<input type="text" id="pvm" class="hopo" style="margin-left: 12px;">
+
+			<p>dödis
+			<input type="date" id="pvm" class="hopo" style="margin-left: 12px;
+			min="1980-01-01" max="2050-01-01"">
 					<br>
+
 			<p>tehtävä
 			<textarea class="hopo" name="tehtava" id="task"></textarea>
 		</p>

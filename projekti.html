@@ -5,12 +5,12 @@
 /* var riviLKM laskee taulukkoon lisättyjen rivien lukumäärän,
 jotta funktio merkinta() kykenisi tulostamaan tyhjiä rivejä */
 var riviLKM = 0;
-
+var riviID = 0;
 
 /* tämä on se fumktio, joka tekee varsinaisen työn */
 function merkinta() {
 	riviLKM++;
-
+	riviID++;
 /* Funktiota kutsutaan napilla. Ilman syötteitä tulostetaan vain päivämäärä,
 jolloin merkintä tehtiin.
 
@@ -19,7 +19,7 @@ rivin taulukkoon. */
 
 	var lista = document.getElementById("tasks");
 
-	var rivi =  lista.insertRow();
+	var rivi =  lista.insertRow(riviID);
 
 	var solu1 = rivi.insertCell(0);
 	var solu2 = rivi.insertCell(1);
@@ -40,7 +40,8 @@ taulukonlisäyksen perään. Napilla on tarkoitus voida poistaa lisätty merkint
 	var nappi = document.createElement("input");
 	nappi.type = "button";
 	nappi.className = "DEL";
-	nappi.value ="  X  ";
+	nappi.value ="X";
+	nappi.onclick = function(){poista(this)};
 
 
 /* Muuttuja lisatty saa arvokseen tietokoneen kellon mukaisen päivämäärän.
@@ -79,27 +80,12 @@ if (pvm != "") {
 
 	solu5.appendChild(nappi);
 
-/* funktion lopussa if -lause tarkastaa, kuinka mones rivi on edellisestä
-tarkastuksesta. Näin joka viidennen rivin jälkeen tulostetaan tyhjä rivi
-ja muuttuja alustetaan uudestaan. */
+}
 
-	if (riviLKM == 5) {
-			riviLKM = 0;
-
-		rivi = lista.insertRow();
-
-		solu1 = rivi.insertCell(0);
-		solu2 = rivi.insertCell(1);
-		solu3 = rivi.insertCell(2);
-		solu4 = rivi.insertCell(3);
-		solu5 = rivi.insertCell(4);
-
-		solu1.innerHTML = "<br>";
-		solu2.innerHTML = " ";
-		solu3.innerHTML = " ";
-		solu4.innerHTML = " ";
-		solu5.innerHTML = " ";
-	}
+function poista(del){
+	var poistetaan = del.parentNode.parentNode.rowIndex;
+	document.getElementById("tasks").deleteRow(poistetaan);
+	riviID--;
 }
 
 /* Tämä funktio palauttaa päivämäärän eurooppalaisessa muodossa ennen kuin

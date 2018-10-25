@@ -1,32 +1,38 @@
 @charset "utf-8";
 body {
-	background-color: #25A294
+	background-color: #FFFFFF;
 }
 
 
 .jumbo{
-	height: 200px;
+	margin-top: -50px;
+	padding-top: 10px;
 	width: 100%;
 	background-color:aqua;
 	position: relative;
-	float: right;
+	text-align: center;
+	height: 200px;
+	font-family: Segoe, "Segoe UI", "DejaVu Sans", "Trebuchet MS", Verdana, "sans-serif";
+	font-size: 40px;
+
 }
+
 .a2{
-	align-self: auto;
-	width: 50%;
+	margin: auto;
+	width: 75%;
+	background-color: #550F97;
+	min-height: 200px;
+	align-items: center;
+	
 }
 
 .a3{
 	align-self: auto;
 	width: 33%;
+	background-color: #550F97;
+	min-height: 200px;
+	margin: auto;
 }
 
-.a4{
-	background-color: #550F97;
-	width: 25%;
-	height: 100px;
-	margin: auto;
-	float: left;
-}
 
 

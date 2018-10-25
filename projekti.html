@@ -2,12 +2,11 @@
 <html>
 
 <script>
-/* var riviLKM laskee taulukkoon lisättyjen rivien lukumäärän,
-jotta funktio merkinta() kykenisi tulostamaan tyhjiä rivejä */
-var riviLKM = 0;
+/* riviID -muuttuja laskee jokaisen uuden rivin taulukossa,jotta
+merkintöjä poistava poista() -funktio löytäisi oikean rivin.*/
 var riviID = 0;
 
-/* tämä on se fumktio, joka tekee varsinaisen työn */
+/* tämä on se funktio, joka tekee varsinaisen työn */
 function merkinta() {
 	riviLKM++;
 	riviID++;
@@ -81,6 +80,10 @@ if (pvm != "") {
 	solu5.appendChild(nappi);
 
 }
+
+/* funktio tunnistaa poistettavan rivin riviID-muuuttujan ansiosta.
+Muuttuja kasvaa yhdellä joka kerta, kun tehdään uusi merkintä.
+Poistofunktio vähentää sitä yhdellä. */
 
 function poista(del){
 	var poistetaan = del.parentNode.parentNode.rowIndex;

@@ -2,10 +2,20 @@
 <html>
 
 <script>
+/* var riviLKM laskee taulukkoon lisättyjen rivien lukumäärän,
+jotta funktio merkinta() kykenisi tulostamaan tyhjiä rivejä */
 var riviLKM = 0;
 
+
+/* tämä on se fumktio, joka tekee varsinaisen työn */
 function merkinta() {
 	riviLKM++;
+
+/* Funktiota kutsutaan napilla. Ilman syötteitä tulostetaan vain päivämäärä,
+jolloin merkintä tehtiin.
+
+Muuttujat lista, rivi ja jokainen solu (1-4) käytännössä luovat tyhjän
+rivin taulukkoon. */
 
 	var lista = document.getElementById("tasks");
 
@@ -16,18 +26,31 @@ function merkinta() {
 	var solu3 = rivi.insertCell(2);
 	var solu4 = rivi.insertCell(3);
 
+/* HTML:ssä olemme antaneet tekstikentille ID:t, joiden perusteella
+funktio löytää oikeat tekstikentät ja tallentaa niiden sisällön muuttujiin. */
+
 	var tekija = document.getElementById('tekija').value;
 	var otsikko  = document.getElementById('otsikko').value;
 	var tehtava = document.getElementById('task').value;
 	var pvm = document.getElementById('pvm').value;
 
+/* Muuttuja lisatty saa arvokseen tietokoneen kellon mukaisen päivämäärän.
+JavaScriptin new Date() -funktio kuitenkin palauttaa myös aikavyöhykkeen
+ja tarkan kellonajan, joten funktiomme pvmNYT(lisaty) muuntaa sen tutumpaan
+muotoon. */
 	var lisatty = new Date();
 	var aika = pvmNYT(lisatty);
 
+/* tässä kohtaa sijoitetaan tekstikenttien syötteet taulukkoon oikeisiin
+kohtiin innerHTML -komennoilla */
 	solu1.innerHTML = tekija;
 	solu2.innerHTML = otsikko;
 	solu3.innerHTML = tehtava + "<br><br>" + "--  " + aika;
 	solu4.innerHTML = pvm;
+
+/* funktion lopussa if -lause tarkastaa, kuinka mones rivi on edellisestä
+tarkastuksesta. Näin joka viidennen rivin jälkeen tulostetaan tyhjä rivi
+ja muuttuja alustetaan uudestaan. */
 
 	if (riviLKM == 5) {
 			riviLKM = 0;
@@ -45,17 +68,16 @@ function merkinta() {
 		solu4.innerHTML = " ";
 
 	}
-
 }
 
+/* Tämä funktio palauttaa päivämäärän eurooppalaisessa muodossa ennen kuin
+se tulostetaan taulukossa. */
 function pvmNYT(pvm) {
-
 	var pv = pvm.getDate();
 	var kk = pvm.getMonth()+1;
 	var vuosi = pvm.getFullYear();
 
 	return pv + "." + kk + "." + vuosi;
-
 }
 
 </script>
@@ -78,7 +100,7 @@ function pvmNYT(pvm) {
 			<p>otsikko
 			<input type="text" id="otsikko" class="hopo" style="margin-left:1px;">
 					<br>
-			<p>dödis
+			<p>deadline
 			<input type="text" id="pvm" class="hopo" style="margin-left: 12px;">
 					<br>
 			<p>tehtävä
@@ -110,7 +132,6 @@ function pvmNYT(pvm) {
 	</div>
 
 	</div>
-
 
 </body>
 </html>

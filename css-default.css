@@ -50,6 +50,13 @@ td{
 	width: 200px;
 }
 
+.pvmPick{
+	border-radius: 5px;
+	font-family: "Roboto Space";
+	max-width: 200px;
+	max-height: 50px;
+	width: 195px;
+}
 /* Varsinainen "sivu" */
 .nootti{
 	border-radius: 5px;

@@ -8,7 +8,6 @@ var riviID = 0;
 
 /* tämä on se funktio, joka tekee varsinaisen työn */
 function merkinta() {
-	riviLKM++;
 	riviID++;
 /* Funktiota kutsutaan napilla. Ilman syötteitä tulostetaan vain päivämäärä,
 jolloin merkintä tehtiin.
@@ -78,17 +77,19 @@ if (pvm != "") {
 }
 
 	solu5.appendChild(nappi);
-
 }
 
 /* funktio tunnistaa poistettavan rivin riviID-muuuttujan ansiosta.
 Muuttuja kasvaa yhdellä joka kerta, kun tehdään uusi merkintä.
-Poistofunktio vähentää sitä yhdellä. */
+Poistofunktio vähentää sitä yhdellä. if(confirm) varmistaa, ettei käyttöjä
+poista mekrintää vahingossa.*/
 
 function poista(del){
-	var poistetaan = del.parentNode.parentNode.rowIndex;
-	document.getElementById("tasks").deleteRow(poistetaan);
-	riviID--;
+	if (confirm("Oletko varma, että haluat poistaa merkintäsi?")) {
+		var poistetaan = del.parentNode.parentNode.rowIndex;
+		document.getElementById("tasks").deleteRow(poistetaan);
+		riviID--;
+	}
 }
 
 /* Tämä funktio palauttaa päivämäärän eurooppalaisessa muodossa ennen kuin

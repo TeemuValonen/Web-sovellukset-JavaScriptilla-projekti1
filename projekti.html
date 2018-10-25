@@ -25,6 +25,7 @@ rivin taulukkoon. */
 	var solu2 = rivi.insertCell(1);
 	var solu3 = rivi.insertCell(2);
 	var solu4 = rivi.insertCell(3);
+	var solu5 = rivi.insertCell(4);
 
 /* HTML:ssä olemme antaneet tekstikentille ID:t, joiden perusteella
 funktio löytää oikeat tekstikentät ja tallentaa niiden sisällön muuttujiin. */
@@ -33,6 +34,14 @@ funktio löytää oikeat tekstikentät ja tallentaa niiden sisällön muuttujiin
 	var otsikko  = document.getElementById('otsikko').value;
 	var tehtava = document.getElementById('task').value;
 	var pvm = document.getElementById('pvm').value;
+
+/* Käytetään createElement() -funktiota luomaan nappi aina uuden
+taulukonlisäyksen perään. Napilla on tarkoitus voida poistaa lisätty merkintä. */
+	var nappi = document.createElement("input");
+	nappi.type = "button";
+	nappi.className = "DEL";
+	nappi.value ="  X  ";
+
 
 /* Muuttuja lisatty saa arvokseen tietokoneen kellon mukaisen päivämäärän.
 JavaScriptin new Date() -funktio kuitenkin palauttaa myös aikavyöhykkeen
@@ -68,6 +77,8 @@ if (pvm != "") {
 	solu4.innerHTML = "Et syöttänyt päivämäärää";
 }
 
+	solu5.appendChild(nappi);
+
 /* funktion lopussa if -lause tarkastaa, kuinka mones rivi on edellisestä
 tarkastuksesta. Näin joka viidennen rivin jälkeen tulostetaan tyhjä rivi
 ja muuttuja alustetaan uudestaan. */
@@ -81,12 +92,13 @@ ja muuttuja alustetaan uudestaan. */
 		solu2 = rivi.insertCell(1);
 		solu3 = rivi.insertCell(2);
 		solu4 = rivi.insertCell(3);
+		solu5 = rivi.insertCell(4);
 
 		solu1.innerHTML = "<br>";
 		solu2.innerHTML = " ";
 		solu3.innerHTML = " ";
 		solu4.innerHTML = " ";
-
+		solu5.innerHTML = " ";
 	}
 }
 
@@ -146,6 +158,7 @@ function pvmNYT(pvm) {
 	        <th>otsikko</th>
 	        <th>tehtävä</th>
 					<th>deadline</th>
+					<th>poista</th>
 	      </tr>
 	    </thead>
 			<tbody>

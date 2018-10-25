@@ -94,3 +94,12 @@ td{
 	border: 0px;
 	margin-top: -15px;
 }
+
+.DEL{
+	style=border-radius: 5px;
+	background-color: red;
+	width: 30px;
+	border: 0px;
+	margin-top: -15px;
+	margin-left: 20%;
+}

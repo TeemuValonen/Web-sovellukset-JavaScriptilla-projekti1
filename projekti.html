@@ -14,27 +14,34 @@ function merkinta() {
 </head>
 <body>
 	<div class="nootti">
-		<h2 class=main, style="float: left;"> notes. </h2>
+		<div class="left">
+		<h2> notes. </h2>
+	</div>
 		<div class="input", id="syote">
 
 		<form onsubmit="merkinta()">
-			<p>Tekijä:
-			<input type="text" id="tekija">
+			<p>tekijä:
+			<input type="text" id="tekija" class="hopo" style="margin-left: 12px;">
 					<br>
-			<p>Tehtävä:
-			<input type="text" id="task">
+			<p>otsikko:
+			<input type="text" id="task" class="hopo">
 					<br><br>
-			<input type="submit" value="Add">
+			<p>tehtävä:
+			<textarea class="hopo" name="tehtävä"></textarea>
+			<input type="submit" value=">>"
+					style="border-radius: 5px; background-color: #FFFFFF; color: #000000; margin-top:-7px;">
 		</form>
 		</div>
 
 
 	<div class="info">
+		<p> Muistiinpanosi</p>
 	</div>
-<hr style="height:2px; background-color: rgb(0,0,0); width:100%;">
+
+		<hr style="height:2px; background-color: #AAD570; width:90%;">
+
 	<div class="data", id="tasks">
-		<dl>
-		</dl>
+
 	</div>
 
 	</div>

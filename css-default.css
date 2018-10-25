@@ -3,9 +3,30 @@ body {
 	background-color: #25A294
 }
 
-.a{
-	background-color: #225464;
-	
+
+.jumbo{
+	height: 200px;
+	width: 100%;
+	background-color:aqua;
+	position: relative;
+	float: right;
+}
+.a2{
+	align-self: auto;
+	width: 50%;
+}
+
+.a3{
+	align-self: auto;
+	width: 33%;
+}
+
+.a4{
+	background-color: #550F97;
+	width: 25%;
+	height: 100px;
+	margin: auto;
+	float: left;
 }
 
 

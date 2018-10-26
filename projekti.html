@@ -38,8 +38,9 @@ taulukonlisäyksen perään. Napilla on tarkoitus voida poistaa lisätty merkint
 	var nappi = document.createElement("input");
 	nappi.type = "button";
 	nappi.className = "DEL";
-	nappi.value ="X";
+	nappi.value ="-";
 	nappi.onclick = function(){poista(this)};
+
 
 
 /* Muuttuja lisatty saa arvokseen tietokoneen kellon mukaisen päivämäärän.
@@ -94,6 +95,7 @@ function poista(del){
 
 /* Tämä funktio palauttaa päivämäärän eurooppalaisessa muodossa ennen kuin
 se tulostetaan taulukossa. */
+
 function pvmNYT(pvm) {
 	var pv = pvm.getDate();
 	var kk = pvm.getMonth()+1;
@@ -110,33 +112,53 @@ function pvmNYT(pvm) {
 <link rel="stylesheet" type="text/css" href="css-default.css">
 </head>
 <body>
+
+
+
+ <!-- "NOOTTI" on sivun pääosio, jonka sisältä löytyvät:
+Vasemmasta ylänurkasta: .left
+Oikeasta ylänurkasta: .input
+.input-divin sisältä .hopo, .pvmPick, sekä .nappi
+Keskeltä: .data (siis table) -->
+
+
 	<div class="nootti">
+
+		<!-- .left lohkon sisällä pelkkä "notes." otsikko -->
+
 		<div class="left">
 		<h2> notes. </h2>
 	</div>
+
+		<!-- .input lohkon sisältä löytyy (referoi riviä 120) muotoilut
+	yläoikean nurkan input-kentille sekä teksteille, sekä napille -->
+
 		<div class="input", id="syote">
 
 			<p>tekijä
-			<input type="text" id="tekija" class="hopo" style="margin-left: 12px;">
+			<input type="text" id="tekija" class="hopo" style="">
 					<br>
 
 			<p>otsikko
-			<input type="text" id="otsikko" class="hopo" style="margin-left:1px;">
+			<input type="text" id="otsikko" class="hopo" style="">
 					<br>
 
-			<p>deadline
-			<input type="date" id="pvm" class="pvmPick" style="margin-left: 1px;
-			min="2018-25-10" max="2030-01-01"">
+			<p style="padding-top: 10px;">deadline
+			<input type="date" id="pvm" class="pvmPick" style="min="2018-25-10" max="2030-01-01"">
 					<br>
 
 			<p>tehtävä
 			<textarea class="hopo" name="tehtava" id="task"></textarea>
 		</p>
 
-			<input class="nappi" type="button" onclick="merkinta()" value=">>">
+			<input class="nappi" type="button" onclick="merkinta()" onmouseover="this.style.backgroundColor='#70AAD7'" onmouseout="this.style.backgroundColor='#89EC74'" value="+">
 	</div>
 
-		<hr style="height:3px; background-color: #70AAD5; width:90%; border: 0px; margin-top: 20px;">
+	<!-- HR lisää viivan/jakajan ylä- sekä alasektioiden välille -->
+
+		<hr style="height:3px; background-color: #70AAD5; width:90%; border: 0px; margin-top: 60px;">
+
+			<!-- .data-lohko sisältää taulun -->
 
 	<div class="data">
 
@@ -144,11 +166,11 @@ function pvmNYT(pvm) {
 
 			<thead>
 	      <tr>
-	        <th>tekijä</th>
-	        <th>otsikko</th>
-	        <th>tehtävä</th>
-					<th>deadline</th>
-					<th>poista</th>
+	        <th style="width: 100px;">tekijä</th>
+	        <th style="width: 100px;">otsikko</th>
+	        <th style="width: 300px;">tehtävä</th>
+					<th style="width: 80px;">deadline</th>
+					<th style="width:10px;">poista</th>
 	      </tr>
 	    </thead>
 			<tbody>

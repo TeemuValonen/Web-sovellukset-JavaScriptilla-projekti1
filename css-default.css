@@ -6,15 +6,18 @@ body {
 h2{
 	font-size: 40px;
 	font-family: monospace;
-	margin-top: 140%;
+	margin-top: 142%;
 	margin-left: 50%;
 	color: #70AAD5;
 }
 
 p{
-	font-family: "Roboto Black";
-	font-size: 14px;
+	font-family: "Verdana";
+	font-size: 12px;
+	font-weight: bold;
 	color: #70AAD5;
+	max-width: 200px;
+	max-height: 30px;
 }
 
 table{
@@ -24,7 +27,7 @@ table{
 	padding: 10px;
 	padding-left: 30px;
 	padding-right: 30px;
-	font-family: "Trebuchet MS";
+	font-family: "Verdana";
 	font-size: 15px;
 	color: #FFFFFF;
 	border-collapse: collapse;
@@ -39,24 +42,35 @@ td{
 	font-size: 12px;
 	color: #222222;
 	background-color: #FFFFFF;
+	max-width: 25px;
+	word-wrap: break-word;
 }
 
 /*Input-classien muotoilut*/
 .hopo{
+	padding-left: 2px;
 	border-radius: 5px;
-	font-family: "Roboto Space";
-	max-width: 200px;
-	max-height: 50px;
+	min-width: 150px;
+	max-width: 260px;
+	max-height: 70px;
 	width: 200px;
+	font-family: Verdana;
+	border: 0px;
+	box-shadow: 0 0 3px #70AAD5;
 }
 
+/*Päivämäärä-kentän muotoilu*/
 .pvmPick{
 	border-radius: 5px;
-	font-family: "Roboto Space";
+	margin-left: 5px;
+	font-family: "Verdana";
 	max-width: 200px;
 	max-height: 50px;
-	width: 195px;
+	width: 130px;
+	border: 0px;
+	box-shadow: 0 0 3px #70AAD5;
 }
+
 /* Varsinainen "sivu" */
 .nootti{
 	border-radius: 5px;
@@ -80,26 +94,37 @@ td{
 
 /* Ylä-oikea -DIVin muotoilu */
 .input{
-	width:50%;
+	font-family:"Verdana";
+	width:38%;
 	height:200px;
-	padding-top: 50px;
 	margin-left: 485px;
+	padding-top: 10px;
 }
 
+/* Merkinnän lisäysnapin muotoilut*/
 .nappi{
-	style=border-radius: 5px;
-	background-color: #44AA44;
+	border-radius: 5px;
+	background-color: #89EC74;
 	color: #000000;
-	width: 260px;
+	width: 270px;
 	border: 0px;
-	margin-top: -15px;
+	margin-top: 50px;
+	margin-left: -3px;
+	height: 25px;
+	font-family: "Arial Black";
+	font-weight: bold;
+	font-stretch: extra-expanded;
 }
 
+/*Merkinnän poistonapin muotoilu*/
 .DEL{
-	style=border-radius: 5px;
-	background-color: red;
+	border-radius: 10px;
+	background-color: #FB7C88;
 	width: 30px;
+	height: 30px;
+	margin-left: 10px;
 	border: 0px;
-	margin-top: -15px;
-	margin-left: 20%;
+	box-shadow: 0 0 15px #FB7C88;
+	font-family: "Verdana";
+	font-size: 24px;
 }
